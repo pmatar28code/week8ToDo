@@ -1,6 +1,7 @@
 package com.example.todo.networking
 
 import android.telecom.Call
+import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.POST
 
@@ -10,7 +11,7 @@ interface ToDoApi {
     fun getToDoItems(): retrofit2.Call<Items>
 
     @POST("/add")
-    fun addToDoItem(item:Item) : retrofit2.Call<Items>
+    fun addToDoItem(@Body item:Item) : retrofit2.Call<Items>
 
 
 }
