@@ -31,8 +31,6 @@ class AddToDoDialog(
                     //do nothing here
                 }
 
-                .setNegativeButton(R.string.cancel){_,_ ->}
-
         return builder.create()
     }
 

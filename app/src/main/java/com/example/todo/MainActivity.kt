@@ -28,11 +28,14 @@ class MainActivity : AppCompatActivity() {
 
         binding.FabAddTodo.setOnClickListener {
             val dialog = AddToDoDialog {onAdd(it)}
-            dialog.show(supportFragmentManager,"add to do")
+            dialog.show(supportFragmentManager,"addtodo")
         }
 
     }
     private fun onAdd(item: ToDo){
+        Network.addItem(item){toDos ->
+            toDoListAdapter.submitList(toDos)
+        }
 
     }
 }

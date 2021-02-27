@@ -10,7 +10,7 @@ enum class Priority(
 ){
     HIGH_PRIORITY(0, R.drawable.ic_high_priority),
     MEDIUM_PRIORITY(1,R.drawable.ic_medium_priority),
-    LOW_PRIORITY(2,R.drawable.ic_low_priority)
+    LOW_PRIORITY(2,R.drawable.ic_low_priority);
 
     companion object {
         fun of(priorityIndex:Int)=when(priorityIndex){

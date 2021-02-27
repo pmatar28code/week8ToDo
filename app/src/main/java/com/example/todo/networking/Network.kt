@@ -46,7 +46,7 @@ object Network {
         toDoApi.getToDoItems().enqueue(ToDoCallBack(onSuccess))
     }
 
-    private  fun addItem(ToDo : ToDo, onSuccess : (List<ToDo>) -> Unit){
+    fun addItem(ToDo : ToDo, onSuccess : (List<ToDo>) -> Unit){
       toDoApi.addToDoItem(ToDo.toItem()).enqueue(ToDoCallBack(onSuccess))
     }
     private fun Item.toToDo():ToDo{

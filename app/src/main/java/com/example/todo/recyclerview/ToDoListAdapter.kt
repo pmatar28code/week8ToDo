@@ -2,16 +2,16 @@ package com.example.todo.recyclerview
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.ListAdapter
+import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.todo.databinding.ItemTodoBinding
 import com.example.todo.models.ToDo
 
-class ToDoListAdapter : androidx.recyclerview.widget.ListAdapter<ToDo,ToDoListAdapter.ToDoViewHolder>(diffUtil) {
+class ToDoListAdapter : ListAdapter<ToDo, ToDoListAdapter.ToDoViewHolder>(diffUtil) {
     companion object{
         private val diffUtil = object : DiffUtil.ItemCallback<ToDo>(){
-            override fun areItemsTheSame(oldItem: ToDo, newItem: ToDo): Boolean = true
+            override fun areItemsTheSame(oldItem: ToDo, newItem: ToDo) = true
 
             override fun areContentsTheSame(oldItem: ToDo, newItem: ToDo): Boolean {
                 return oldItem == newItem
@@ -21,7 +21,7 @@ class ToDoListAdapter : androidx.recyclerview.widget.ListAdapter<ToDo,ToDoListAd
     }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ToDoViewHolder {
         val inflater  = LayoutInflater.from(parent.context)
-        val binding = ItemTodoBinding.inflate(inflater)
+        val binding = ItemTodoBinding.inflate(inflater,parent,false)
         return ToDoViewHolder(binding)
     }
 
